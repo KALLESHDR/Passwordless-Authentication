@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+</head> 
+<body style="background-color:khaki;">
+    {% if messages %}
+
+{% for message in messages %}
+ {% if message.tags == "error" %}
+ 
+    <div class="alert alert-danger" >
+        <h1 style="border: 5px red;">  {{ message }} </h1>
+</div>
+{% else %} 
+<div class="alert alert-{{ message.tags }}">
+  <h1 style="border: 5px red;">  {{ message }} </h1>
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+
+   
+  <h1 style="text-align:center;"> Welcome Back!!</h1>
+  <h2 style="text-align: center;"> Login to continue</h2>
+  <div class="container" style="background-color: grey; height: 400px; width:600px; text-align:center; border: 5px solid black; margin: 0 auto;">
+   
+</br>
+</br>
+<form method="POST" style="text-align:center;"> {% csrf_token %}
+{{ form.as_p }}
+<button type="submit" class="btn btn-default" style="text-align:center; background-color:white;">Submit</button>
+<p><b> Create an account? </b><a href="{% url 'register' %}">Register here</a>.</p>
+</div>
+</form>
+</body>
+</html>

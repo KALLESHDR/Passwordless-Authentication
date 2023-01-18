@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+</head> 
+<body style="background-color: grey;">
+{% if request.user.is_authenticated %}
+          <div class="container">
+         <div class="row" style="position: relative; left:300px;">
+          <div class="col">
+            <h1 style="text-align:center;margin: 0 auto; "> Welcome to the online shop! ! </h1>
+            <img src='https://static.vecteezy.com/system/resources/previews/000/172/891/original/online-shopping-center-free-vector.jpg' style=" text-align: centre; display:block; margin-left: auto; margin-right: auto; border: 5px black; height: 600px; width: 800px;"/>
+          </div>
+        </div>
+
+
+        </div>
+        {%else %}
+        <div class="container" style="position: relative; left:300px;">
+       <h1>Please login, to continue</h1>
+        </div>
+        {% endif %}
+
+      </body>
+      </html>

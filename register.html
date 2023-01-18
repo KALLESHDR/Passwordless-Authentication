@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+  <html> 
+    <head>
+  </head> 
+  <body style="background-color:cadetblue;"> 
+    <h1 style="text-align:center;"> Register yourself for an awesome shopping experience !</h1>
+    <br>
+    <form method="POST" style="text-align:center;"> {% csrf_token %}
+   <div class="container" style="background-color: grey; height: 400px; width:600px; text-align:center; border: 5px solid black; margin: 0 auto;">
+   
+   </br>
+  </br>
+  </br>
+    {{ form.as_p }}
+   
+    <button type="submit" style="text-align:center;">Submit</button>
+      <p><b>Already have an account? </b><a href="{% url 'login' %}">Sign in</a>.</p>
+   </div>
+  </body> 
+  </html>
